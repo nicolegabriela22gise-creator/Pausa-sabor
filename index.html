@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>  | Emprendimiento Estudiantil Terceros Técnicos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Iconos -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Fuente -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+<!--==========================
+        BARRA SUPERIOR
+===========================-->
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-mug-hot"></i>
+
+<h2>PAUSA Y SABOR</h2>
+
+</div>
+
+<ul>
+
+<li><a href="#inicio">Inicio</a></li>
+
+<li><a href="#productos">Productos</a></li>
+
+<li><a href="#nosotros">Nosotros</a></li>
+
+<li><a href="#contacto">Contacto</a></li>
+
+</ul>
+
+<div class="carrito-icono">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="contador">0</span>
+
+</div>
+
+</nav>
+
+</header>
+
+<!--==========================
+        HERO
+===========================-->
+
+<section id="inicio" class="hero">
+
+<div class="hero-texto">
+
+<h1>
+
+TU MOMENTO DE CALMA, CON EL MEJOR SABOR☕
+
+</h1>
+
+<p>
+
+Realiza tu pedido desde tu teléfono y recíbelo en pocos minutos.
+
+</p>
+
+<a href="#productos">
+
+<button>
+
+Ver Menú
+
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+<!--==========================
+        BUSCADOR
+===========================-->
+
+<section class="buscador">
+
+<input
+type="text"
+id="buscar"
+placeholder="Buscar producto...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</section>
+
+<!--==========================
+        PRODUCTOS
+===========================-->
+
+<section id="productos">
+
+<h2>
+
+Nuestro Menú
+
+</h2>
+
+<div class="contenedor-productos">
+
+<div class="producto">
+
+<div class="etiqueta">
+
+Más vendido
+
+</div>
+
+<img src="img/cappuccino.jpg">
+
+<h3>
+
+Cappuccino
+
+</h3>
+
+<div class="estrellas">
+
+★★★★★
+
+</div>
+
+<p>
+
+Espresso con leche cremosa y espuma.
+
+</p>
+
+<h4>
+
+$2.50
+
+</h4>
+
+<button
+onclick="agregarCarrito('Cappuccino',2.50)">
+
+<i class="fa-solid fa-cart-plus"></i>
+
+Agregar
+
+</button>
+
+</div>
+
+<div class="producto">
+
+<img src="img/frappe.jpg">
+
+<h3>
+
+Frappé
+
+</h3>
+
+<div class="estrellas">
+
+★★★★★
+
+</div>
+
+<p>
+
+Bebida fría con crema chantillí.
+
+</p>
+
+<h4>
+
+$3.00
+
+</h4>
+
+<button
+onclick="agregarCarrito('Frappé',3.00)">
+
+<i class="fa-solid fa-cart-plus"></i>
+
+Agregar
+
+</button>
+
+</div>
+
+<div class="producto">
+
+<div class="nuevo">
+
+Nuevo
+
+</div>
+
+<img src="img/cheesecake.jpg">
+
+<h3>
+
+Cheesecake
+
+</h3>
+
+<div class="estrellas">
+
+★★★★★
+
+</div>
+
+<p>
+
+Delicioso pastel de queso artesanal.
+
+</p>
+
+<h4>
+
+$2.75
+
+</h4>
+
+<button
+onclick="agregarCarrito('Cheesecake',2.75)">
+
+<i class="fa-solid fa-cart-plus"></i>
+
+Agregar
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=========================================
+            CARRITO DE COMPRAS
+==========================================-->
+
+<section id="carrito" class="carrito">
+
+    <div class="titulo-carrito">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <h2>Mi Pedido</h2>
+
+    </div>
+
+    <div id="listaCarrito">
+
+        <p class="vacio">
+
+            Tu carrito está vacío.
+
+        </p>
+
+    </div>
+
+    <div class="total">
+
+        <h3>
+
+            Total:
+
+            <span id="total">
+
+                $0.00
+
+            </span>
+
+        </h3>
+
+    </div>
+
+</section>
+
+<!--=========================================
+            DATOS DEL CLIENTE
+==========================================-->
+
+<section class="cliente">
+
+    <h2>
+
+        Datos del Cliente
+
+    </h2>
+
+    <form id="formulario">
+
+        <div class="grupo">
+
+            <label>
+
+                Nombre
+
+            </label>
+
+            <input
+                type="text"
+                id="cliente"
+                placeholder="Ingrese su nombre">
+
+        </div>
+
+        <div class="grupo">
+
+            <label>
+
+                Curso
+
+            </label>
+
+            <input
+                type="text"
+                id="curso"
+                placeholder="Ejemplo: 3ro BGU A">
+
+        </div>
+
+        <div class="grupo">
+
+            <label>
+
+                Número de celular
+
+            </label>
+
+            <input
+                type="tel"
+                id="telefono"
+                placeholder="0968381162">
+
+        </div>
+
+        <div class="grupo">
+
+            <label>
+
+                Observaciones
+
+            </label>
+
+            <textarea
+                id="observaciones"
+                rows="4"
+                placeholder="Sin azúcar, extra crema, etc."></textarea>
+
+        </div>
+
+        <button
+            type="button"
+            class="btn-whatsapp"
+            onclick="enviarWhatsApp()">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Enviar Pedido por WhatsApp
+
+        </button>
+
+    </form>
+
+</section>
+
+<!--=========================================
+            NOSOTROS
+==========================================-->
+
+<section id="nosotros" class="nosotros">
+
+    <h2>
+
+        Sobre Nosotros
+
+    </h2>
+
+    <p>
+
+        Pausa y Sabor es un emprendimiento estudiantil de la Unidad Educativa
+        Campozano, creado para fomentar el emprendimiento, el trabajo en equipo
+        y la atención al cliente mediante la elaboración y venta de ricos alimentos  y
+        postres preparados con productos de calidad.
+
+    </p>
+
+</section>
+
+<!--=========================================
+            CONTACTO
+==========================================-->
+
+<section id="contacto" class="contacto">
+
+    <h2>
+
+        Contáctanos
+
+    </h2>
+
+    <div class="info-contacto">
+
+        <div>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <h4>
+
+                Dirección
+
+            </h4>
+
+            <p>
+
+                Unidad Educativa Campozano
+                General Enrique Gallo vía El Limón
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <i class="fa-solid fa-phone"></i>
+
+            <h4>
+
+                Teléfono
+
+            </h4>
+
+            <p>
+
+                0968381162
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <h4>
+
+                Correo
+
+            </h4>
+
+            <p>
+
+                emprendimiento@campozano.edu.ec
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================================
+        BOTÓN FLOTANTE DE WHATSAPP
+==========================================-->
+
+<a
+
+href="https://wa.me/5930968381162"
+
+target="_blank"
+
+class="whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!--=========================================
+                FOOTER
+==========================================-->
+
+<footer>
+
+<p>
+
+© 2026 Café Camp | Emprendimiento Estudiantil
+
+</p>
+
+<p>
+
+Unidad Educativa Campozano
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
